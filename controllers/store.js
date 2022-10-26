@@ -13,6 +13,7 @@ storeRouter.get('/', (req, res) => {
         })
     })
 })
+
 // NEW
 
 // DELETE
@@ -24,6 +25,16 @@ storeRouter.get('/', (req, res) => {
 // EDIT
 
 // SHOW
+storeRouter.get("/:id", (req, res) => {
+    console.log(req.params.id)
+    Product.findById(req.params.id, (error, foundProduct) => {
+        console.log(foundProduct)
+        console.log(error)
+        res.render('show.ejs', {
+            product: foundProduct,
+        })
+    })
+})
 
 // SEED
 // storeRouter.get("/seed", (req, res) => {

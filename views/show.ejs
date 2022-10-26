@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head.ejs')%>
+  </head>
+  <body>
+    <nav>
+    </nav>
+    <h1>The Witch's Cupboard</h1>
+    <!-- <div class="showBox"> -->
+          <h2><strong><%=product.name%></strong></h2><br>
+          <h3>Provides: <%=product.description%></h3><br>
+          <img src="<%=product.img%>" /><br>
+          <h4>Quantity Remaining: <%=product.qty%></h4><br>
+          <h4>Price: $<%=product.price%></h4>
+    <!-- </div> -->
+  </body>
+</html>

@@ -11,8 +11,7 @@
       <%  for(let i = 0; i < products.length; i++) { %>
         <li>
           <h2><strong> <%=products[i].name%></strong></h2>
-          <!-- <h3> Provides: <%=products[i].description%></h3> -->
-          <a><img src="<%=products[i].img%>" /></a><br>
+          <a href="/store/<%=products[i]._id%>"><img src="<%=products[i].img%>" /></a><br>
         </li>
       <% } %>
     </ul>
