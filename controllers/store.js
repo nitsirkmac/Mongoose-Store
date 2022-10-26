@@ -24,6 +24,11 @@ storeRouter.get('/new', (req, res) => {
 // UPDATE
 
 // CREATE
+storeRouter.post('/', (req, res) => {
+    Product.create(req.body, (error, createdProduct) => {
+        res.redirect("/store")
+    })
+})
 
 // EDIT
 
