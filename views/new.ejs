@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head.ejs')%>
+  </head>
+  <header>
+    <%- include('./partials/header.ejs')%>
+  </header>
+  <body>
+    <h2>Enter A New Product</h2>
+    <form action="/store" method="POST"></form>
+          Name: <input type="text" name="name" /><br>
+          Associations: <input type="text" name="description" /><br>
+          Image: <input type="text" name="img" /><br>
+          Available Quantity: <input type="number" name="qty" /><br>
+          Price: $<input type="number" name="price" /><br>
+          <input type="submit" value="Enter Product" />
+    </div>
+  </body>
+</html>

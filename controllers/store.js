@@ -15,6 +15,9 @@ storeRouter.get('/', (req, res) => {
 })
 
 // NEW
+storeRouter.get('/new', (req, res) => {
+    res.render('new.ejs')
+})
 
 // DELETE
 
