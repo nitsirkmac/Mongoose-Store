@@ -20,8 +20,12 @@ storeRouter.get('/new', (req, res) => {
 })
 
 // DELETE
+// res.redirect('/store')
 
 // UPDATE
+// storeRouter.put('/:id', (req, res) => {
+// res.redirect(`store/${req.params.id}`)
+// })
 
 // CREATE
 storeRouter.post('/', (req, res) => {
