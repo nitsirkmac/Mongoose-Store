@@ -1,7 +1,12 @@
-#home-page {
+ul {
+    list-style: none;
+}
+
+header {
     display: flex;
-    height: 500px;
-    align-content: center;
-    justify-content: center;
-    background-color: darkslategrey;
+    height: 40px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: darkslategray;
+    color: goldenrod;
 }

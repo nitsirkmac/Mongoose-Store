@@ -6,10 +6,22 @@
   <header>
     <%- include('./partials/header.ejs')%>
   </header>
-  <body>
+  <style>
+   .showBox {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 
-    <nav>
-    </nav>
+    img {
+        height: 200px;
+        border: solid goldenrod 3px;
+        border-radius: 15px;
+    }
+
+  </style>
+  <body>
     <div class="showBox">
           <h2><strong><%=product.name%></strong></h2><br>
           <h3>Provides: <%=product.description%></h3><br>
@@ -17,9 +29,22 @@
           <h4>Available Quantity: <%=product.qty%></h4><br>
           <!-- Qty = 0 => OUT OF STOCK conditional -->
           <h4>Price: $<%=product.price%></h4>
-          <!-- EDIT button/link-->
-          <!-- DELETE button/link-->
-          <!-- BUY button/ reduce the qty -=1  -->
+          <div class="buybtn">
+            <form action="/store/cart/<%=id%>?_method=PUT" method="POST" >
+                <input type="submit" value="Add To Your Pantry" />
+            </form>
+                      <!-- BUY button/ reduce the qty -=1  -->
+          </div>
+
+          <div class="eddel">
+            <form action="/store/<%=id%>/edit" method="PUT">
+                <input type="submit" value="Edit This Item" />
+            </form>
+            <form action="/store/<%=id%>/?_method=DELETE" method="POST">
+                <input type="submit" value="Remove This Item">
+             </form>
+            </div>
+
 
     </div>
   </body>

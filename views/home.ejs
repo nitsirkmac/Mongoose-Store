@@ -2,11 +2,33 @@
 <html lang="en">
   <head>
     <%- include('./partials/head.ejs')%>
+    <script src="https://kit.fontawesome.com/e166a84a42.js" crossorigin="anonymous"></script>
   </head>
+  <style>
+    h1 {
+      font-family: 'LIKEASTONE2';
+      font-size: 60px;
+    }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 150px;
+      background-color: slategrey;
+      font-family: 'Academy Engraved LET';
+      font-size: 35px;
+      color: darkslategray;
+    }
+    input {
+      background-color: lightgrey;
+      color: darkslategrey;
+      
+    }
+  </style>
   <body>
     <section id="home=page">
         <h1>Welcome to The Witch's Cupboard</h1>
-        <h3>Explore the natural magic of herbs, flowers, oils, and more</h3>
+        <h4>I'm delighted you've found your way. Come in and explore the natural magic of herbs, flowers, oils, and more</h4>
         <form action="/store" method="GET">
             <input type="submit" value="Browse Cupbard" />
         </form>

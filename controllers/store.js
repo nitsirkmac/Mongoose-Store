@@ -20,12 +20,37 @@ storeRouter.get('/new', (req, res) => {
 })
 
 // DELETE
-// res.redirect('/store')
+storeRouter.delete('/:id', (req, res) => {
+    Product.findByIdAndRemove(req.params.id, (err, deletedProduct) => {
+        res.redirect('/store')
+    });
+})
 
 // UPDATE
-// storeRouter.put('/:id', (req, res) => {
-// res.redirect(`store/${req.params.id}`)
-// })
+storeRouter.put('/:id', (req, res) => {
+    Product.findByIdAndUpdate (
+        req.params.id, 
+        req.body,
+        { new: true },
+        (err, updatedProduct) => {
+            res.redirect(`store/${req.params.id}`)
+        }
+    )
+})
+
+// BUY BUTTON
+storeRouter.put('/cart/:id', (req, res) => {
+    Product.findByIdAndUpdate (
+        req.params.id,
+        req.body,
+        (err, purchasedProduct) => {
+            console.log(purchasedProduct)
+            purchasedProduct.qty -= 1
+            purchasedProduct.save()
+            res.redirect(`/store/${req.params.id}`)
+        }
+    )
+})
 
 // CREATE
 storeRouter.post('/', (req, res) => {
@@ -35,16 +60,23 @@ storeRouter.post('/', (req, res) => {
 })
 
 // EDIT
+storeRouter.get('/:id/edit', (req, res) => {
+    Product.findById(req.params.id, (error, foundProduct) => {
+        res.render('edit.ejs', {
+            item: foundProduct
+        })
+    })
+})
 
 // SHOW
 storeRouter.get("/:id", (req, res) => {
-    console.log(req.params.id)
     Product.findById(req.params.id, (error, foundProduct) => {
-        console.log(foundProduct)
-        console.log(error)
         res.render('show.ejs', {
             product: foundProduct,
+            id: req.params.id,
+            qty: foundProduct.qty
         })
+        
     })
 })
 

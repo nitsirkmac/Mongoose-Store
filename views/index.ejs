@@ -6,8 +6,17 @@
   <header>
     <%- include('./partials/header.ejs')%>
   </header>
+  <style>
+    img {
+        height: 150px;
+        border: solid goldenrod 3px;
+        border-radius: 15px;
+    }
+    
+
+  </style>
   <body>
-    <ul>
+    <ul >
       <%  for(let i = 0; i < products.length; i++) { %>
         <li>
           <h2><strong> <%=products[i].name%></strong></h2>
