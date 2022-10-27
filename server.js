@@ -21,5 +21,9 @@ app.use(methodOverride("_method"));
 app.use("/store", storeController);
 app.use(express.static('public'))
 
+app.get('/', (req, res) => {
+    res.render('home.ejs')
+})
+
 app.listen(PORT, () =>
     console.log("Another beautiful morning! Makes me sick..."))

@@ -1,0 +1,7 @@
+#home-page {
+    display: flex;
+    height: 500px;
+    align-content: center;
+    justify-content: center;
+    background-color: darkslategrey;
+}
